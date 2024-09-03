@@ -8,6 +8,8 @@ class NotesService {
     const notes = AppState.notes
     const newNote = new Note(NoteDataFromform)
     notes.push(NoteDataFromform)
+    console.log(newNote);
+
   }
 
 
@@ -34,9 +36,11 @@ class NotesService {
 
 
 
+  // You will need to save notes to local storage after a create, update, or delete, reference gregslist and redacted
   saveNotes() {
     saveState('notes', AppState.notes)
   }
+  // TODO don't forget to write a method to bring things out of local storage, you will probably need to call this on page load
 
 }
 

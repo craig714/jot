@@ -8,9 +8,13 @@ export class NoteController {
   constructor() {
 
     AppState.on('activeNote', this.drawActiveNote)
+    // FIXME we do not want to create a note when the notes array in the appstate changes
+    // FIXME after the notes array is changed in the appstate, you need to draw your list of notes
     AppState.on('notes', this.CreateNote)
     this.drawNoteFiles()
-    this.CreateNote()
+
+    // REVIEW anything inside the constructor will run on page load, we do not want to create a Note until the user fills out the form
+    // this.CreateNote()
   }
   drawNoteFiles() {
     const notes = AppState.notes
@@ -19,6 +23,9 @@ export class NoteController {
     const noteElem = document.getElementById('note-list')
     // @ts-ignore
     noteElem.innerHTML = noteHTML
+
+    // TODO add an id in your html that you can draw the note count to
+    // TODO set that elements innerText to the amount of notes you have in the appstate.
   }
 
 
@@ -58,6 +65,9 @@ export class NoteController {
 
   }
 
+  // TODO reference my code from redacted when I update a CaseFile (updateCaseFile)
+
+  // TODO reference my code from gregslist for adding delete method (deleteCar)
 
 
 
