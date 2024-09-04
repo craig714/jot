@@ -1,7 +1,7 @@
 import { EventEmitter } from './utils/EventEmitter.js'
 import { createObservableProxy } from './utils/ObservableProxy.js'
 import { Note } from './models/Note.js'
-import { NoteController } from './controllers/NoteController.js'
+
 class ObservableAppState extends EventEmitter {
   notes = [
 
@@ -23,7 +23,10 @@ class ObservableAppState extends EventEmitter {
 
   ]
 
+  /**@type {Note} */
+  // @ts-ignore
   activeNote = null
+
 }
 
 export const AppState = createObservableProxy(new ObservableAppState())

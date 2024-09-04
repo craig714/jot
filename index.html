@@ -48,6 +48,9 @@
 
         <div class="col-md-4">
           <h3>Add a Jot</h3>
+          <div id="Jot-Count">
+            Jot counter
+          </div>
           <form onsubmit="app.NoteController.CreateNote()">
             <div class="mb-3">
               <label for="color">Note color</label>
@@ -76,7 +79,7 @@
             <p>Last updated:</p>
             <p class="btn btn-primary">Delete</p>
             <p class="btn btn-primary">Save</p>
-            <textarea id="noteContent" class="form-control" rows="10"></textarea>
+            <textarea id="noteContent" class="form-control" rows="20"></textarea>
           </div>
         </div>
       </div>

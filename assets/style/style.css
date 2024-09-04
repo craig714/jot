@@ -21,3 +21,7 @@
   padding: 20px;
   background-color: #badf19;
 }
+
+.textAreaLarge {
+  height: 100vh;
+}
